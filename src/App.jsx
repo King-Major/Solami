@@ -94,7 +94,7 @@ const SolamiRedesign = () => {
           <div className="md:col-span-1 flex flex-col sm:flex-row md:flex-col gap-4 md:gap-6">
             <div className="bg-[#004d40] rounded-3xl md:rounded-[2rem] p-6 md:p-8 shadow-sm flex-1 flex flex-col justify-center relative overflow-hidden text-center min-h-[160px]">
                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-amber-300 via-transparent to-transparent"></div>
-               <h3 className="text-2xl md:text-3xl font-serif italic text-amber-400 mb-1 relative z-10">"Believe."</h3>
+               <h3 className="text-2xl md:text-3xl font-serif italic text-amber-400 mb-1 relative z-10">"Choose to Believe."</h3>
                <p className="text-teal-100/80 text-sm font-medium relative z-10 uppercase tracking-widest">The Promise</p>
             </div>
             
