@@ -1,4 +1,16 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@theme {
+  /* Brand Colors */
+  --color-brand-light: #fff1f2;
+  --color-brand: #fb7185;
+  --color-brand-dark: #be123c;
+  
+  /* Typography overrides */
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Optional: Smooth out the scrolling for a premium feel */
+html {
+  scroll-behavior: smooth;
+}
