@@ -98,10 +98,32 @@ function HomePage({ addToCart }) {
           </div>
         </div>
         <div className="md:col-span-1 flex flex-col sm:flex-row md:flex-col gap-4 md:gap-6">
-          <div className="bg-rose-500 rounded-3xl md:rounded-[2rem] p-6 shadow-lg flex-1 flex flex-col justify-center relative overflow-hidden text-center min-h-[160px] group">
-            <Crown className="mx-auto text-rose-200 mb-3" size={32} strokeWidth={1.5} />
-            <h3 className="text-2xl font-serif italic text-white mb-1 relative z-10">"Luxury in every strand."</h3>
-          </div>
+         <div className="bg-gradient-to-br from-rose-400 to-rose-600 rounded-3xl md:rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-rose-500/20 flex-1 flex flex-col justify-center relative overflow-hidden text-center min-h-[180px] group border border-rose-300/50">
+  
+  {/* Animated Background Flares for depth */}
+  <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-rose-700/30 rounded-full blur-2xl group-hover:translate-x-8 transition-transform duration-700"></div>
+
+  {/* Content Container */}
+  <div className="relative z-10 flex flex-col items-center">
+    
+    {/* Glassmorphism Crown Emblem */}
+    <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 ring-1 ring-white/40 shadow-inner group-hover:-translate-y-1 transition-transform duration-500">
+      <Crown className="text-white drop-shadow-md" size={26} strokeWidth={1.5} />
+    </div>
+    
+    {/* Editorial Micro-heading */}
+    <p className="text-[10px] text-rose-100 font-bold tracking-[0.2em] uppercase mb-2">
+      The Deluxe Promise
+    </p>
+    
+    {/* Main Quote */}
+    <h3 className="text-2xl md:text-3xl font-serif italic text-white leading-tight drop-shadow-sm">
+      "Luxury in every strand."
+    </h3>
+    
+  </div>
+</div>
         
         </div>
       </div>
@@ -238,76 +260,139 @@ function CategoryPage() {
 }
 
 // --- 4. NEW: ABOUT US PAGE ---
+// --- 4. NEW: ABOUT US PAGE ---
 function AboutPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
+  
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 flex flex-col items-center">
       <h1 className="text-5xl font-serif font-bold text-slate-900 mb-8 text-center">Our Story</h1>
+      
       <div className="w-24 h-1 bg-rose-400 mx-auto mb-12"></div>
-      <div className="prose prose-lg text-slate-600 mx-auto">
+      
+      <div className="prose prose-lg text-slate-600 mx-auto text-center md:text-left mb-12">
         <p className="mb-6">Founded with a passion for true luxury, <strong>Deluxe Hair</strong> was born from a simple desire: to provide women with ethically sourced, highest-grade raw human hair that actually lasts.</p>
         <p className="mb-6">We bypassed the middlemen to build direct relationships with donors and factories. This means no chemical processing, no synthetic fillers, and HD lace that melts flawlessly every single time.</p>
         <p>Your hair is your crown. We are just here to help you wear it beautifully.</p>
       </div>
+      
+      {/* Centered Return Home Button */}
+      <Link to="/" className="px-8 py-4 bg-rose-50 text-rose-600 font-bold rounded-full hover:bg-rose-100 transition-colors flex items-center gap-2 w-fit">
+        <ArrowLeft size={18} strokeWidth={1.5} /> Return Home
+      </Link>
     </div>
   );
 }
 
-// --- 5. NEW: CONTACT US PAGE ---
+// --- 5. PERFECTED: CONTACT US PAGE (Soft Luxury Box) ---
 function ContactPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
+  
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-5xl font-serif font-bold text-slate-900 mb-4 text-center">Get in Touch</h1>
-        <p className="text-center text-slate-600 mb-12">Questions about an order, styling, or our wholesale program? We would love to hear from you.</p>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 flex flex-col items-center">
+      <div className="w-full max-w-5xl mx-auto">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-rose-50 text-rose-500 rounded-full flex items-center justify-center shrink-0"><Mail /></div>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">Email Us</h3>
-                <p className="text-slate-600">support@deluxehair.com</p>
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-serif font-bold text-slate-900 mb-6">Get in Touch</h1>
+          <div className="w-24 h-1 bg-rose-400 mx-auto mb-6"></div>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Whether you have a question about an order, need styling advice, or want to explore our wholesale program, our concierge team is here for you.
+          </p>
+        </div>
+        
+        {/* Master Contact Card (Restored but Lightened) */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white p-2 sm:p-3 rounded-[2.5rem] shadow-[0_8px_30px_rgb(251,113,133,0.08)] border border-rose-100">
+          
+          {/* Left Column: Premium Warm Rose Concierge Card */}
+          <div className="lg:col-span-2 bg-gradient-to-br from-rose-400 to-rose-500 text-white rounded-[2rem] p-8 sm:p-12 relative overflow-hidden shadow-inner flex flex-col justify-between">
+            {/* Soft decorative background flares */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -mr-20 -mt-20"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-rose-700/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+            
+            <div className="relative z-10">
+              <h2 className="text-3xl font-serif mb-2">Contact Info</h2>
+              <p className="text-rose-100 mb-12 text-sm leading-relaxed">Fill out the form and our concierge team will get back to you within 24 hours.</p>
+              
+              <div className="space-y-10">
+                <div className="flex items-center gap-5 group cursor-pointer">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center shrink-0 border border-white/30 group-hover:bg-white group-hover:scale-110 transition-all duration-300 shadow-sm">
+                    <Mail size={20} strokeWidth={1.5} className="text-white group-hover:text-rose-500 transition-colors" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-rose-100 font-bold uppercase tracking-widest mb-1">Email Us</p>
+                    <p className="text-base font-medium tracking-wide">concierge@deluxehair.com</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-5 group cursor-pointer">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center shrink-0 border border-white/30 group-hover:bg-white group-hover:scale-110 transition-all duration-300 shadow-sm">
+                    <Phone size={20} strokeWidth={1.5} className="text-white group-hover:text-rose-500 transition-colors" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-rose-100 font-bold uppercase tracking-widest mb-1">Call Us</p>
+                    <p className="text-base font-medium tracking-wide">1-800-DELUXE-1</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-5 group cursor-pointer">
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center shrink-0 border border-white/30 group-hover:bg-white group-hover:scale-110 transition-all duration-300 shadow-sm">
+                    <MapPin size={20} strokeWidth={1.5} className="text-white group-hover:text-rose-500 transition-colors" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-rose-100 font-bold uppercase tracking-widest mb-1">Flagship Studio</p>
+                    <p className="text-base font-medium tracking-wide leading-snug">123 Luxury Ave, Suite 400<br/>New York, NY 10001</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-rose-50 text-rose-500 rounded-full flex items-center justify-center shrink-0"><Phone /></div>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">Call Us</h3>
-                <p className="text-slate-600">1-800-DELUXE-1</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-rose-50 text-rose-500 rounded-full flex items-center justify-center shrink-0"><MapPin /></div>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">Studio</h3>
-                <p className="text-slate-600">123 Luxury Ave, Suite 400<br/>New York, NY 10001</p>
-              </div>
+            
+            {/* Branding at bottom */}
+            <div className="relative z-10 mt-16 pt-8 border-t border-white/20">
+               <span className="text-xl font-serif font-bold tracking-widest text-white/80">
+                 DELUXE<span className="italic font-normal">Hair</span>
+               </span>
             </div>
           </div>
           
-          {/* Mock Form */}
-          <div className="bg-white p-8 rounded-[2rem] shadow-lg border border-rose-50">
-            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); toast.success("Message sent successfully!"); }}>
-              <div>
-                <label className="block text-sm font-bold text-slate-700 mb-1">Name</label>
-                <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400" placeholder="Jane Doe" required />
+          {/* Right Column: Modern Form */}
+          <div className="lg:col-span-3 p-6 sm:p-10 lg:p-14 flex flex-col justify-center">
+            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); toast.success("Message sent successfully!"); }}>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-500 tracking-widest uppercase ml-1">First Name</label>
+                  <input type="text" className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 text-slate-900 focus:outline-none focus:bg-white focus:border-rose-400 focus:ring-4 focus:ring-rose-400/10 transition-all" placeholder="Jane" required />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-500 tracking-widest uppercase ml-1">Last Name</label>
+                  <input type="text" className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 text-slate-900 focus:outline-none focus:bg-white focus:border-rose-400 focus:ring-4 focus:ring-rose-400/10 transition-all" placeholder="Doe" required />
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-bold text-slate-700 mb-1">Email</label>
-                <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400" placeholder="jane@example.com" required />
+
+              <div className="space-y-2">
+                <label className="text-[11px] font-bold text-slate-500 tracking-widest uppercase ml-1">Email Address</label>
+                <input type="email" className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 text-slate-900 focus:outline-none focus:bg-white focus:border-rose-400 focus:ring-4 focus:ring-rose-400/10 transition-all" placeholder="jane@example.com" required />
               </div>
-              <div>
-                <label className="block text-sm font-bold text-slate-700 mb-1">Message</label>
-                <textarea rows="4" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-rose-400 focus:ring-1 focus:ring-rose-400" placeholder="How can we help?" required></textarea>
+              
+              <div className="space-y-2">
+                <label className="text-[11px] font-bold text-slate-500 tracking-widest uppercase ml-1">Your Message</label>
+                <textarea rows="4" className="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100 text-slate-900 focus:outline-none focus:bg-white focus:border-rose-400 focus:ring-4 focus:ring-rose-400/10 transition-all resize-none" placeholder="How can our concierge assist you today?" required></textarea>
               </div>
-              <button className="w-full bg-slate-900 text-white py-4 rounded-full font-bold hover:bg-rose-500 transition-colors">Send Message</button>
+              
+              <button className="w-full bg-slate-900 text-white py-4 mt-2 rounded-full font-bold hover:bg-rose-500 transition-all duration-300 shadow-lg shadow-slate-900/10 hover:shadow-rose-500/25 flex justify-center items-center gap-2 active:scale-95 text-lg">
+                Send Message <ArrowRight size={18} strokeWidth={2} />
+              </button>
             </form>
           </div>
+          
         </div>
       </div>
+      
+      {/* Return Home Button */}
+      <Link to="/" className="mt-16 px-8 py-4 bg-rose-50 text-rose-600 font-bold rounded-full hover:bg-rose-100 transition-colors flex items-center gap-2 w-fit">
+        <ArrowLeft size={18} strokeWidth={1.5} /> Return Home
+      </Link>
     </div>
   );
 }
