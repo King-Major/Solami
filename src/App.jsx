@@ -469,17 +469,8 @@ function About({ sectionRef }) {
   return (
     <section ref={sectionRef} id="About" className="py-28" style={{ backgroundColor: C.surface }}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-[0.9fr,1.1fr] gap-16 items-start">
-          <div className="md:sticky md:top-28">
-            <SectionHeading
-              eyebrow="About the company"
-              title="A pharmaceutical business built on paperwork you can check."
-              sub="ALEB Pharmaceuticals was formally registered in Niger State on 6 August 2018 under RC 2637201, with pharmaceutical services declared as its core line of business at 15 Kere Ahmed Street, Shango, Minna."
-            />
-            <RegistryTag compact rotate={false} />
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-[1.1fr,0.9fr] gap-16 items-start">
+          <div className="grid sm:grid-cols-2 gap-6 md:order-1">
             {values.map((v, i) => (
               <motion.div
                 key={v.title}
@@ -532,6 +523,15 @@ function About({ sectionRef }) {
                 Office of the Directors, ALEB Pharmaceuticals Ltd
               </div>
             </motion.div>
+          </div>
+
+          <div className="md:order-2 md:self-start md:bg-white/90 md:backdrop-blur-sm md:shadow-xl md:shadow-slate-200/10 md:border md:border-slate-200/70 md:rounded-3xl md:p-6">
+            <SectionHeading
+              eyebrow="About the company"
+              title="A pharmaceutical business built on paperwork you can check."
+              sub="ALEB Pharmaceuticals was formally registered in Niger State on 6 August 2018 under RC 2637201, with pharmaceutical services declared as its core line of business at 15 Kere Ahmed Street, Shango, Minna."
+            />
+            <RegistryTag compact rotate={false} />
           </div>
         </div>
       </div>
