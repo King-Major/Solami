@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import heroVideo from "./video/herovideo.mp4";
 import {
   Menu,
   X,
@@ -334,6 +335,24 @@ function Hero({ sectionRef, onNavigate }) {
       className="relative pt-40 pb-28 overflow-hidden"
       style={{ backgroundColor: C.white }}
     >
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover opacity-70"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(245,249,255,0.92) 0%, rgba(245,249,255,0.78) 35%, rgba(245,249,255,0.52) 100%)",
+          }}
+        />
+      </div>
       <MoleculeField />
       <div className="max-w-6xl mx-auto px-6 relative grid md:grid-cols-[1.1fr,0.9fr] gap-16 items-center">
         <div>
